@@ -1,0 +1,6 @@
+*.docx
+/minisys-mooc.cache/
+/minisys-mooc.hw/
+/minisys-mooc.ip_user_files/
+/minisys-mooc.runs/
+/minisys-mooc.sim/
