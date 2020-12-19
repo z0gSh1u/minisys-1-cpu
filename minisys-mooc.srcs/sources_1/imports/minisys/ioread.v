@@ -1,5 +1,4 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
+`include "public.v"
 
 module ioread(reset,clk,ior,switchctrl,ioread_data,ioread_data_switch);
     input reset,clk;

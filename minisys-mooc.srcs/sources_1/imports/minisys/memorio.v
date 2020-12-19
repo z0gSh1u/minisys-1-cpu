@@ -1,5 +1,6 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
+`include "public.v"
+
+// MEMorIO，对MEM和IO访问选择正确的数据流向
 
 module memorio(caddress,address,memread,memwrite,ioread,iowrite,mread_data,ioread_data,wdata,rdata,write_data,LEDCtrl,SwitchCtrl);
     input[31:0] caddress;       // from alu_result in executs32

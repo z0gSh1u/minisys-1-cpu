@@ -23,10 +23,6 @@
 `define OffsetRange 15:0 // 指令字中offset的范围
 `define AddressRange 25:0 // 指令字中address的范围
 
-// 设计相关
-// ALU相关
-`define ALUOpRange 1:0 // ALUOp范围
-
 // Minisys指令集
 // R型指令
 `define OP_RTYPE 6'b000000

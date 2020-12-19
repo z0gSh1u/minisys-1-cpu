@@ -40,9 +40,23 @@ module exe_sim(
    wire[31:0] Add_Result;        //pc op        
  
     
-   Executs32 Uexe(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
-                     Shamt,ALUSrc,I_format,Zero,Sftmd,ALU_Result,Add_Result,PC_plus_4
-                     );
+   Executs32 Uexe(
+   .Read_data_1(Read_data_1),	// r-form rs 从译码单元是Read_data_1中来
+   .Read_data_2(Read_data_2),	// r-form rt 从译码单元是Read_data_2中来
+   .Sign_extend(Sign_extend),	// i-form 译码单元来的扩展后的立即数
+   .Function_opcode(Function_opcode),  // r-form instructions[5..0] 取指单元来的R型的Func
+   .Exe_opcode(Exe_opcode),    // opcode 取值单元来的Op
+   .ALUOp(ALUOp),              // 控制单元来的ALUOp，第一级控制（LW/SW 00，BEQ/BNE 01，R/I 10）
+   .Shamt(Shamt),              // 移位量
+   .Sftmd(Sftmd),              // 是否是移位指令
+   .ALUSrc(ALUSrc),            // 来自控制单元，表明第二个操作数是立即数（beq、bne除外）
+   .I_format(I_format),        // 该指令是除了beq、bne、lw、sw以外的其他I类型指令
+   .Zero(Zero),                // Zero Flag
+   .ALU_Result(ALU_Result),    // 执行单元的最终运算结果
+   .Add_Result(Add_Result),	   // 计算的地址结果       
+   .PC_plus_4(PC_plus_4)       // 来自取指单元的PC+4
+   );
+
     initial begin
        #200 begin Exe_opcode = 6'b001000;  //addi 
                 Read_data_1 = 32'h00000003;		//r-form rs
