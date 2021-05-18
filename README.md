@@ -1,6 +1,6 @@
 # minisys-1-cpu
 
-![image](https://i.loli.net/2020/12/19/U8YDiLoOVHf1QIW.png)
+![image](https://z3.ax1x.com/2021/05/18/ghLy3d.png)
 
 完成了 [东南大学计算机系统综合设计 MOOC](http://www.icourse163.org/course/SEU-1003566002) 中前半部分讲述的支持 31 条 MIPS 指令的 Minisys-1 单周期 CPU 及部分接口组件，并验证了相关仿真波形。同时完成了 07、08、09、10、11、12 节的 “测验与作业” 部分。
 
